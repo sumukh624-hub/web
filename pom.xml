@@ -10,14 +10,14 @@
 
     <name>HelloServletApp</name>
 
-    <!-- 🔥 FIX FOR YOUR ERROR -->
+    <!-- Compiler version -->
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
     </properties>
 
     <dependencies>
-        <!-- ✅ For Tomcat 9 -->
+        <!-- Servlet API for Tomcat 9 -->
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
@@ -30,7 +30,7 @@
         <finalName>HelloServletApp</finalName>
 
         <plugins>
-            <!-- 🔥 IMPORTANT: Fix compiler version -->
+            <!-- Maven Compiler Plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -41,7 +41,7 @@
                 </configuration>
             </plugin>
 
-            <!-- Optional but good -->
+            <!-- WAR Plugin -->
             <plugin>
                 <artifactId>maven-war-plugin</artifactId>
                 <version>3.3.2</version>
