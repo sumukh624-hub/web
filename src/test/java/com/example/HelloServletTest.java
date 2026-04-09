@@ -1,20 +1,20 @@
 package com.example;
 
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-class HelloServletTest {
+public class HelloServletTest {
 
     @Test
-    void testDoGet() throws Exception {
-        // Mock request and response
+    public void testDoGet() throws Exception {
+        HelloServlet servlet = new HelloServlet();
         HttpServletRequest request = Mockito.mock(HttpServletRequest.class);
         HttpServletResponse response = Mockito.mock(HttpServletResponse.class);
 
@@ -22,11 +22,9 @@ class HelloServletTest {
         PrintWriter writer = new PrintWriter(stringWriter);
         Mockito.when(response.getWriter()).thenReturn(writer);
 
-        // Call servlet
-        new HelloServlet().doGet(request, response);
-
+        servlet.doGet(request, response);
         writer.flush();
-        String output = stringWriter.toString();
-        assertTrue(output.contains("Hello, World!"));
+
+        assertTrue(stringWriter.toString().contains("Hello, World!"));
     }
 }
