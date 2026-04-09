@@ -23,10 +23,11 @@ public class HelloServlet extends HttpServlet {
         response.setContentType("text/html");
 
         PrintWriter out = response.getWriter();
+
         out.println("<html>");
         out.println("<head><title>Hello Servlet</title></head>");
         out.println("<body>");
-        out.println("<h1>Hello World from Tomcat 9 (javax)</h1>");
+        out.println("<h1>✅ Hello from Jenkins + Tomcat 9 (WORKING)</h1>");
         out.println("</body>");
         out.println("</html>");
     }
